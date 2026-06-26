@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/api/documents/next-number", "destination": "/api/documents/next-number" },
+    { "source": "/api/documents", "destination": "/api/documents" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

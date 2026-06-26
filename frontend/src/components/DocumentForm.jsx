@@ -26,7 +26,7 @@ export default function DocumentForm({
   // Fetch the next document number automatically when Type changes
   const fetchNextDocNumber = async (selectedType) => {
     try {
-      const response = await fetch(`http://localhost:5001/api/documents/next-number?type=${encodeURIComponent(selectedType)}`);
+      const response = await fetch(`/api/documents/next-number?type=${encodeURIComponent(selectedType)}`);
       if (response.ok) {
         const data = await response.json();
         onChangeFormData({

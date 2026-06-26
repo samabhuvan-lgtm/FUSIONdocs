@@ -15,7 +15,7 @@ export default function Dashboard({ triggerRefresh, onSetToast }) {
   const fetchDocuments = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5001/api/documents');
+      const response = await fetch('/api/documents');
       if (response.ok) {
         const data = await response.json();
         setDocuments(data);
