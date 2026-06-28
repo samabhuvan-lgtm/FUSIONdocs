@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { FilePlus, Database } from 'lucide-react';
+import { FilePlus, Database, LogOut } from 'lucide-react';
+import AdminLogin from './components/AdminLogin';
 import DocumentForm from './components/DocumentForm';
 import DocumentPreview from './components/DocumentPreview';
 import Dashboard from './components/Dashboard';
@@ -8,6 +9,7 @@ import { downloadPDF } from './utils/pdf';
 import './App.css';
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [activeTab, setActiveTab] = useState('create');
   const [formData, setFormData] = useState({
     type: 'Tax Invoice',
@@ -236,6 +238,10 @@ export default function App() {
     }
   };
 
+  if (!isAuthenticated) {
+    return <AdminLogin onLoginSuccess={() => setIsAuthenticated(true)} />;
+  }
+
   return (
     <div className="app-container">
       {/* Toast Alert */}
@@ -269,6 +275,14 @@ export default function App() {
             onClick={() => setActiveTab('history')}
           >
             <Database size={16} /> History Dashboard
+          </button>
+          <button
+            type="button"
+            className="tab-btn logout-btn"
+            onClick={() => setIsAuthenticated(false)}
+            title="Logout"
+          >
+            <LogOut size={16} /> Logout
           </button>
         </nav>
       </header>
