@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Calendar, FileText, Download, Share2, Eye, X, MessageSquare, Mail } from 'lucide-react';
+import { Search, Calendar, FileText, Download, Share2, Eye, X, MessageSquare } from 'lucide-react';
 import { formatCurrency } from '../utils/math';
 import { downloadPDF, shareDocument } from '../utils/pdf';
 import DocumentPreview from './DocumentPreview';
@@ -174,14 +174,7 @@ export default function Dashboard({ triggerRefresh, onSetToast }) {
                       >
                         <MessageSquare size={14} />
                       </button>
-                      <button
-                        type="button"
-                        className="btn-icon-only"
-                        title="Share via Email"
-                        onClick={() => handleShare(doc, 'email')}
-                      >
-                        <Mail size={14} />
-                      </button>
+
                     </div>
                   </td>
                 </tr>
@@ -219,13 +212,7 @@ export default function Dashboard({ triggerRefresh, onSetToast }) {
             </div>
 
             <div className="modal-footer">
-              <button
-                type="button"
-                className="btn"
-                onClick={() => handleShare(selectedDoc, 'email')}
-              >
-                <Mail size={14} /> Share Email
-              </button>
+
               <button
                 type="button"
                 className="btn"
