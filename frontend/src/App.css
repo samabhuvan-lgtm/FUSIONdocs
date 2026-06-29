@@ -1200,3 +1200,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--error) !important;
   background-color: rgba(239, 68, 68, 0.08) !important;
 }
+
+/* Fix visibility/contrast issues in select option dropdowns */
+select option {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-primary) !important;
+}
+
