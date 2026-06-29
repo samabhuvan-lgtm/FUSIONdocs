@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const ADMIN_USERNAME = 'Fusion';
-const ADMIN_PASSWORD = 'Fusion23';
+const ADMIN_PASSWORD = 'Fusion123';
 
 export default function AdminLogin({ onLoginSuccess }) {
   const [username, setUsername] = useState('');
